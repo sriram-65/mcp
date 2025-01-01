@@ -6,7 +6,7 @@ const resourceRoutes = require('./routes/resourceRoutes');
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://sriram:1324@cluster0.9gopd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
