@@ -1,15 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const resourceRoutes = require('./routes/resourceRoutes');
+const path = require('path');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://sriram:1324@cluster0.9gopd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster", { useNewUrlParser: true, useUnifiedTopology: true });
-
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/resources', resourceRoutes);
 

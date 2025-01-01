@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', async (req, res) => {
-    const resources = await Resource.find();
+    const resources = await Resource.getAll();
     res.render('resources', { resources });
 });
 
@@ -20,12 +20,11 @@ router.get('/upload', (req, res) => {
 });
 
 router.post('/upload', upload.single('file'), async (req, res) => {
-    const resource = new Resource({
+    await Resource.create({
         title: req.body.title,
         description: req.body.description,
         fileUrl: `/uploads/${req.file.filename}`,
     });
-    await resource.save();
     res.redirect('/resources');
 });
 

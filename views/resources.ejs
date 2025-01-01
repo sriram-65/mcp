@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Resources</title>
-</head>
-<body>
-    <h1>All Resources</h1>
-    <ul>
-        <% resources.forEach(resource => { %>
-            <li>
-                <h3><%= resource.title %></h3>
-                <p><%= resource.description %></p>
-                <a href="<%= resource.fileUrl %>" download>Download</a>
-            </li>
-        <% }) %>
-    </ul>
-    <a href="/resources/upload">Upload More Resources</a>
-</body>
-</html>
+<h1>Resources</h1>
+<ul>
+    <% resources.forEach(resource => { %>
+        <li>
+            <strong>Title:</strong> <%= resource.title %><br>
+            <strong>Description:</strong> <%= resource.description %><br>
+            <a href="<%= resource.fileUrl %>">Download File</a>
+        </li>
+    <% }) %>
+</ul>
+<a href="/resources/upload">Upload a Resource</a>

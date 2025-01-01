@@ -1,0 +1,2 @@
+Title: Example Resource | Description: Example Description | File: /uploads/sample.pdf
+Title:   | Description:   | File: /uploads/1735720033598-jonathan-gallegos-Up4VB9_T9BA-unsplash.jpg
